@@ -6,6 +6,12 @@ import org.example.Server;
 public class Main {
 
     public static void main(String[] args) {
+
+        /* manual:
+            for running server application uncomment server part,
+            for client app uncomment client part
+        */
+
         Server server = new Server(8080);
         //Client client = new Client("localhost",8080);
     }
