@@ -3,7 +3,7 @@ package org.example;
 import java.net.*;
 import java.io.*;
 
-public class Server {
+public class Server extends Thread{
     //initialize socket and input stream
     private Socket		 socket = null;
     private ServerSocket server = null;

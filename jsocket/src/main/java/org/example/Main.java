@@ -13,6 +13,7 @@ public class Main {
         */
 
         Server server = new Server(8080);
-        //Client client = new Client("localhost",8080);
+        Server newServer = new Server(8081);
+//        Client client = new Client("localhost",8080);
     }
 }
