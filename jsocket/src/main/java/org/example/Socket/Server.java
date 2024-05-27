@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Socket;
 // A Java program for a Server
 import java.net.*;
 import java.io.*;
