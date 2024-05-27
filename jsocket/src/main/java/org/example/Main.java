@@ -29,10 +29,11 @@ public class Main {
 //        Decrypter nmsg = new Decrypter(emsg);
 //        System.out.println(nmsg.dmsg);
 
-
+        //user input
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your message: ");
         String mainMessage = input.nextLine();
+
         Encrypter msg = new Encrypter(mainMessage);
         System.out.println(msg.encryptedMessage);
         //ok
