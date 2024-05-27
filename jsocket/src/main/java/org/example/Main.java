@@ -1,8 +1,7 @@
 package org.example;
 
-import org.example.Client;
-import org.example.Server;
-
+import org.example.Socket.*;
+import org.example.Service.*;
 public class Main {
 
     public static void main(String[] args) {
@@ -12,8 +11,13 @@ public class Main {
             for client app uncomment client part
         */
 
-        Server server = new Server(8080);
-        Server newServer = new Server(8081);
+//        Server server = new Server(8080);
 //        Client client = new Client("localhost",8080);
+        Encrypter msg = new Encrypter("hello");
+        String emsg = msg.encryptedMessage;
+        System.out.println(emsg);
+
+        Decrypter nmsg = new Decrypter(emsg);
+        System.out.println(nmsg.dmsg);
     }
 }
