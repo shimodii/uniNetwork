@@ -89,8 +89,5 @@ img {
     width: 300px;
     height: 300px;
     position: absolute;
-}
-
-img:first-child {
     display: block;
 }
