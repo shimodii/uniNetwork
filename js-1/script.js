@@ -1,33 +1,20 @@
-let counter = 1
+var counter = 1
 
 //buttons
-let nextButton = document.getElementsByClassName("next-button")
-let prevButton = document.getElementsByClassName("prev-button")
-
-prevButton.addEventListener("click", () => {
-    counter--
-    if (counter <= 1) {
-        counter = 1
-    }
-})
-nextButton.addEventListener("click", () => {
-    counter++
-    if (counter >= 4) {
-        counter = 4
-    }
-})
+const nextButton = document.getElementById("next-button")
+const prevButton = document.getElementById("prev-button")
 
 //images
-let image1 = document.getElementsByClassName("image1")
-let image2 = document.getElementsByClassName("image2")
-let image3 = document.getElementsByClassName("image3")
-let image4 = document.getElementsByClassName("image4")
+const image1 = document.getElementById("image1")
+const image2 = document.getElementById("image2")
+const image3 = document.getElementById("image3")
+const image4 = document.getElementById("image4")
 
 //signs
-let sign1 = document.getElementsByClassName("step1-sign")
-let sign2 = document.getElementsByClassName("step2-sign")
-let sign3 = document.getElementsByClassName("step3-sign")
-let sign4 = document.getElementsByClassName("step4-sign")
+const sign1 = document.getElementById("step1-sign")
+const sign2 = document.getElementById("step2-sign")
+const sign3 = document.getElementById("step3-sign")
+const sign4 = document.getElementById("step4-sign")
 
 // function counterUp(){
 //     counter++;
@@ -45,25 +32,67 @@ let sign4 = document.getElementsByClassName("step4-sign")
 //     console.log(counter)
 // }
 
-switch(counter) {
-    case 1:
-        //code
-        sign1.style.backgroundColor = "lawngreen";
-        console.log("sign1")
-        break
-    case 2:
-        sign2.style.backgroundColor = "lawngreen";
-        console.log("sign2")
-        //code
-        break
-    case 3:
-        //code
-        sign3.style.backgroundColor = "lawngreen";
-        console.log("sign3")
-        break
-    case 4:
-        //code
-        sign4.style.backgroundColor = "lawngreen";
-        console.log("sign4")
-        break
+function checkStep(){
+    switch(counter) {
+        case 1:
+            sign1.style.backgroundColor = "lawngreen";
+            sign2.style.backgroundColor = "lightsteelblue";
+            sign3.style.backgroundColor = "lightsteelblue";
+            sign4.style.backgroundColor = "lightsteelblue";
+            image1.style.display = "block";
+            image2.style.display = "none";
+            image3.style.display = "none";
+            image4.style.display = "none";
+            break
+        case 2:
+            sign1.style.backgroundColor = "lawngreen";
+            sign2.style.backgroundColor = "lawngreen";
+            sign3.style.backgroundColor = "lightsteelblue";
+            sign4.style.backgroundColor = "lightsteelblue";
+            image1.style.display = "none";
+            image2.style.display = "block";
+            image3.style.display = "none";
+            image4.style.display = "none";
+
+            break
+        case 3:
+            sign1.style.backgroundColor = "lawngreen";
+            sign2.style.backgroundColor = "lawngreen";
+            sign3.style.backgroundColor = "lawngreen";
+            sign4.style.backgroundColor = "lightsteelblue";
+            image1.style.display = "none";
+            image2.style.display = "none";
+            image3.style.display = "block";
+            image4.style.display = "none";
+            break
+        case 4:
+            sign1.style.backgroundColor = "lawngreen";
+            sign2.style.backgroundColor = "lawngreen";
+            sign3.style.backgroundColor = "lawngreen";
+            sign4.style.backgroundColor = "lawngreen";
+            image1.style.display = "none";
+            image2.style.display = "none";
+            image3.style.display = "none";
+            image4.style.display = "block";
+            break
+    }
 }
+
+checkStep()
+prevButton.addEventListener('click', function() {
+    // console.log(counter)
+    counter--
+    // console.log(counter)
+    if (counter <= 1) {
+        counter = 1
+    }
+    checkStep()
+    // console.log(counter)
+})
+nextButton.addEventListener("click", function() {
+    counter++
+    if (counter >= 4) {
+        counter = 4
+    }
+    checkStep()
+})
