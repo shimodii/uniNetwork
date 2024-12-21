@@ -4,7 +4,7 @@ import "net"
 
 func main(){
     // saving clients ip
-    clients := make([]string, 2)
+    clients := make([]string, 0, 2)
     
     // create server
     server, err := net.Listen("tcp", ":8080")
@@ -20,10 +20,15 @@ func main(){
             panic(err)
         }
         clients = append(clients, client.RemoteAddr().String())
-        //go handleClient(client)
-        for i, v := range(clients) {
-            println(i, " ", v)
+        if (len(clients) == 2){
+            println("yay clients are full")
+        } else if (len(clients) < 2) {
+            println("need more nodes")
+        } else {
+            panic("nodes overload, decrease them bro")
         }
+        //go handleClient(client)
+
     }
 }
 
