@@ -20,8 +20,10 @@ func main(){
             panic(err)
         }
         clients = append(clients, client.RemoteAddr().String())
-        println(clients)
         //go handleClient(client)
+        for i, v := range(clients) {
+            println(i, " ", v)
+        }
     }
 }
 
