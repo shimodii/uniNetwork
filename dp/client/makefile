@@ -2,4 +2,4 @@ run:
 	@go run main.go
 
 build:
-	@go build main.go -o client
+	@go build -o client main.go 
